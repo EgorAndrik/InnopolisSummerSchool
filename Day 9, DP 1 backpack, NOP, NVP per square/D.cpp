@@ -16,14 +16,14 @@ int main()
     for(int i = 0; i < n; i++)
         cin >> arr[i];
     cin >> s;
-    n--;
     sort(arr.begin(), arr.end());
     while(s != 0 && n != -1){
-        if (s >= arr[n]){
+        if (s < arr[n]) n--;
+        else if (s >= arr[n]){
             s -= arr[n];
             res.push_back(arr[n]);
+            if (s == 0) break;
         }
-        else n--;
     }
     if (s == 0){
         cout << res.size() << endl;
