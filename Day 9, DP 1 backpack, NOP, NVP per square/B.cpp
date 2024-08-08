@@ -34,7 +34,6 @@ int main() {
         result.push_back(step);
         step = previous[step];
     }
-    reverse(result.begin(), result.end());
 
     cout << result.size() - 1 << endl;
     for (auto i : result) {
